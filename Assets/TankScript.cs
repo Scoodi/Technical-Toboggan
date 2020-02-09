@@ -5,14 +5,23 @@ using UnityEngine;
 public class TankScript : MonoBehaviour
 {
     public int playerNumber = 0;
-    public float speed = 10f;
-    public float turnSpeed = 180f;
 
-    private float movementInput;
-    private float turnInput;
+    //Speeds
+    public float speed = 10f;
+    public float turnSpeed = 2f;
+
+    //Button inputs
     private string verticalAccessName;
     private string horizontalAccessName;
+    private string aAccessName;
+    private string bAccessName;
+
+
+    private float verticalMove;
+    private float horizontalMove;
+
     private Rigidbody rb;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +29,8 @@ public class TankScript : MonoBehaviour
         //Set Input Axes
         verticalAccessName = "Vertical" + playerNumber;
         horizontalAccessName = "Horizontal" + playerNumber;
+        aAccessName = "A" + playerNumber;
+        bAccessName = "B" + playerNumber;
         if (playerNumber == 0)
         {
             Debug.LogError("playerNumber not initialised");
@@ -29,32 +40,48 @@ public class TankScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        verticalMove = Input.GetAxis(verticalAccessName);
+        horizontalMove = Input.GetAxis(horizontalAccessName);
+
         CheckForInput();
-        movementInput = Input.GetAxis(verticalAccessName);
-        turnInput = Input.GetAxis(horizontalAccessName);
+
     }
 
     void FixedUpdate()
     {
         Move();
-        Turn();
     }
 
-    public void CheckForInput ()
-    {
-
-    }
 
     public void Move()
     {
-        Vector3 movement = transform.forward * movementInput * speed * Time.deltaTime;
-        rb.MovePosition(rb.position + movement);
+        Vector3 movement = transform.right * horizontalMove + transform.forward * verticalMove;
+
+        rb.MovePosition(rb.position + movement * speed * Time.deltaTime);
     }
 
-    public void Turn()
+    void CheckForInput()
     {
-        float turn = turnInput * turnSpeed * Time.deltaTime;
-        Quaternion turnRotation = Quaternion.Euler(0f, turn, 0f);
-        rb.MoveRotation(rb.rotation * turnRotation);
+        if (Input.GetButton(aAccessName))
+        {
+            Turn(false);
+        }
+        if (Input.GetButton(bAccessName))
+        {
+            Turn(true);
+        }
+    }
+
+
+    public void Turn(bool right)
+    {
+        if (!right)
+        {
+            transform.Rotate(Vector3.down * turnSpeed);
+        }
+        if (right)
+        {
+            transform.Rotate(Vector3.up * turnSpeed);
+        }
     }
 }
