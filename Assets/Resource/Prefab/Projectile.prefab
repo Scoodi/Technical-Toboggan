@@ -109,6 +109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionParticles: {fileID: 8526169634949234880, guid: 898d98e2d4b449a439f6af435bcb69ab,
     type: 3}
+  speed: 1
 --- !u!136 &6927442874462795128
 CapsuleCollider:
   m_ObjectHideFlags: 0

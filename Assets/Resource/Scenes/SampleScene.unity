@@ -212,6 +212,11 @@ PrefabInstance:
       propertyPath: playerNumber
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8500594934794634202, guid: 17fb0e7bdfbb59742bf88a747f9188dd,
+        type: 3}
+      propertyPath: turnSpeed
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8500594935588476307, guid: 17fb0e7bdfbb59742bf88a747f9188dd,
         type: 3}
       propertyPath: playerNumber
@@ -982,6 +987,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_NormalizedViewPortRect.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8500594934794634202, guid: 17fb0e7bdfbb59742bf88a747f9188dd,
+        type: 3}
+      propertyPath: turnSpeed
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 17fb0e7bdfbb59742bf88a747f9188dd, type: 3}

@@ -40,8 +40,7 @@ public class TankScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        verticalMove = Input.GetAxis(verticalAccessName);
-        horizontalMove = Input.GetAxis(horizontalAccessName);
+       
 
         CheckForInput();
 
@@ -55,7 +54,11 @@ public class TankScript : MonoBehaviour
 
     public void Move()
     {
-        Vector3 movement = transform.right * horizontalMove + transform.forward * verticalMove;
+        //if no input then no need to move 
+        if (Input.GetAxis(verticalAccessName).Equals(0) && Input.GetAxis(horizontalAccessName).Equals(0))
+            return;
+                  
+        Vector3 movement = transform.right * Input.GetAxis(horizontalAccessName) + transform.forward * Input.GetAxis(verticalAccessName);
 
         rb.MovePosition(rb.position + movement * speed * Time.deltaTime);
     }
