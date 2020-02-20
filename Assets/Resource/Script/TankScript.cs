@@ -22,6 +22,13 @@ public class TankScript : MonoBehaviour
 
     private Rigidbody rb;
 
+
+    public enum EDirection 
+    { 
+        eLeft, eRight
+    }
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,11 +46,8 @@ public class TankScript : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-       
-
+    {      
         CheckForInput();
-
     }
 
     void FixedUpdate()
@@ -64,25 +68,24 @@ public class TankScript : MonoBehaviour
     }
 
     void CheckForInput()
-    {
+    {        
         if (Input.GetButton(aAccessName))
         {
-            Turn(false);
+            Turn(EDirection.eLeft);
         }
         if (Input.GetButton(bAccessName))
         {
-            Turn(true);
+            Turn(EDirection.eRight);
         }
     }
-
-
-    public void Turn(bool right)
+    
+    public void Turn(EDirection argDirection)
     {
-        if (!right)
+        if (argDirection == EDirection.eLeft)
         {
             transform.Rotate(Vector3.down * turnSpeed);
         }
-        if (right)
+        else if(argDirection == EDirection.eRight)
         {
             transform.Rotate(Vector3.up * turnSpeed);
         }
