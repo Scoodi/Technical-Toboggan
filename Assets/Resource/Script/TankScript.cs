@@ -16,12 +16,12 @@ public class TankScript : MonoBehaviour
     private string aAccessName;
     private string bAccessName;
 
-
+    private float health = 100f;
     private float verticalMove;
     private float horizontalMove;
 
     private Rigidbody rb;
-
+    private bool onGround = true;
 
     public enum EDirection 
     { 
@@ -59,7 +59,7 @@ public class TankScript : MonoBehaviour
     public void Move()
     {
         //if no input then no need to move 
-        if (Input.GetAxis(verticalAccessName).Equals(0) && Input.GetAxis(horizontalAccessName).Equals(0))
+        if (Input.GetAxis(verticalAccessName).Equals(0) && Input.GetAxis(horizontalAccessName).Equals(0) || !onGround)
             return;
                   
         Vector3 movement = transform.right * Input.GetAxis(horizontalAccessName) + transform.forward * Input.GetAxis(verticalAccessName);
@@ -89,5 +89,32 @@ public class TankScript : MonoBehaviour
         {
             transform.Rotate(Vector3.up * turnSpeed);
         }
+    }
+
+    public void ChangeHealth (float hp)
+    {
+        health += hp;
+        if (health <= 0f)
+        {
+            Die();
+        }
+    }
+    void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            onGround = true;
+        }
+    }
+    private void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            onGround = false;
+        }
+    }
+    void Die ()
+    {
+        Debug.Log("Player " + playerNumber + " is dead");
     }
 }

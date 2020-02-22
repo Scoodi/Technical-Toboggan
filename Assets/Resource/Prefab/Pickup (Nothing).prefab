@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3561499900895208575
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3561499900895208546}
+  - component: {fileID: 3561499900895208545}
+  - component: {fileID: 3561499900895208574}
+  m_Layer: 0
+  m_Name: Pickup (Nothing)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3561499900895208546
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3561499900895208575}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -9.422635, y: 2.901356, z: 8.631093}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &3561499900895208545
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3561499900895208575}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3561499900895208574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3561499900895208575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79108f2a189f87548a53f344924c8453, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickups:
+  - name: Beer
+    effectObject: {fileID: 1103090475875641398, guid: 4884d8cb283aac94399c7c0182f0635e,
+      type: 3}
+    pickupPrefab: {fileID: 2377288869696776860, guid: fbd4d822fd3bd7a4091833568d56d766,
+      type: 3}
+  - name: Clock
+    effectObject: {fileID: 1103090475875641398, guid: 4884d8cb283aac94399c7c0182f0635e,
+      type: 3}
+    pickupPrefab: {fileID: 2403243548781946703, guid: 141cff7182606e048bb44ea113721f06,
+      type: 3}
+  - name: Impulse
+    effectObject: {fileID: 1103090475875641398, guid: 4884d8cb283aac94399c7c0182f0635e,
+      type: 3}
+    pickupPrefab: {fileID: 5732676784521225680, guid: a727f2d6c9734094bb293582e4624795,
+      type: 3}
+  - name: Damage
+    effectObject: {fileID: 1103090475875641398, guid: 4884d8cb283aac94399c7c0182f0635e,
+      type: 3}
+    pickupPrefab: {fileID: 3274157369242092261, guid: 4b7ce560e1e8cb14c8b16dc30e44db3c,
+      type: 3}
+  - name: Smoke
+    effectObject: {fileID: 1103090475875641398, guid: 4884d8cb283aac94399c7c0182f0635e,
+      type: 3}
+    pickupPrefab: {fileID: 8982678741157255585, guid: ef42352820f597f40bcfa0aba753476a,
+      type: 3}
