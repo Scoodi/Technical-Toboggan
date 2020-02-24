@@ -26,6 +26,8 @@ public class TankScript : MonoBehaviour
     private Rigidbody rb;
     private bool onGround = true;
 
+    MeshRenderer[] meshes;
+
     public enum EDirection 
     { 
         eLeft, eRight
@@ -45,6 +47,10 @@ public class TankScript : MonoBehaviour
         {
             Debug.LogError("playerNumber not initialised");
         }
+
+        //Get all the mesh renderers in the tank model 
+        meshes = gameObject.GetComponentsInChildren<MeshRenderer>();
+
     }
 
     // Update is called once per frame
@@ -118,11 +124,7 @@ public class TankScript : MonoBehaviour
     }
 
     IEnumerator Respawn ()
-    {
-        //Get all the mesh renderers in the tank model 
-        MeshRenderer[] meshes;
-        meshes = gameObject.GetComponentsInChildren<MeshRenderer>();
-
+    {     
         //Disable all the render meshes in the tank
         foreach (MeshRenderer mr in meshes)
         {
