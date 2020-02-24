@@ -16,7 +16,10 @@ public class TankScript : MonoBehaviour
     private string aAccessName;
     private string bAccessName;
 
-    private float health = 100f;
+
+    [SerializeField] private Transform spawnPoint;
+    [SerializeField] private float health = 100f;
+    [SerializeField] private float respawnTime;
     private float verticalMove;
     private float horizontalMove;
 
@@ -113,8 +116,40 @@ public class TankScript : MonoBehaviour
             onGround = false;
         }
     }
+
+    IEnumerator Respawn ()
+    {
+        //Get all the mesh renderers in the tank model 
+        MeshRenderer[] meshes;
+        meshes = gameObject.GetComponentsInChildren<MeshRenderer>();
+
+        //Disable all the render meshes in the tank
+        foreach (MeshRenderer mr in meshes)
+        {
+            mr.enabled = false;
+        }
+
+        yield return new WaitForSeconds(respawnTime);
+        
+        //Move the tank to its spawn point and reset its health 
+        transform.position = spawnPoint.transform.position;
+        health = 100f;
+        
+        //Enable all the meshes 
+        foreach (MeshRenderer mr in meshes)
+        {
+            mr.enabled = true;
+        }
+
+
+    }
+
     void Die ()
     {
-        Debug.Log("Player " + playerNumber + " is dead");
+        //TODO - Create a better affect for the tank dying, explosion 
+        Debug.Log("Player " + playerNumber + " is dead");    
+        StartCoroutine(Respawn());
     }
+
+
 }

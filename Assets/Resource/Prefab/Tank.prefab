@@ -313,7 +313,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerNumber: 1
   speed: 10
-  turnSpeed: 180
+  turnSpeed: 2
+  spawnPoint: {fileID: 0}
+  health: 100
+  respawnTime: 2
 --- !u!1 &8500594935310249762
 GameObject:
   m_ObjectHideFlags: 0
