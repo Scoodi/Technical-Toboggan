@@ -139,8 +139,11 @@ public class TankScript : MonoBehaviour
         rb.useGravity = false;
 
         yield return new WaitForSeconds(respawnTime);
-        
+
         //Move the tank to its spawn point and reset its health 
+        rb.velocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+        transform.rotation = spawnPoint.transform.rotation;
         transform.position = spawnPoint.transform.position;
         health = 100f;
          
