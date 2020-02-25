@@ -62,7 +62,7 @@ MonoBehaviour:
   projectiles:
   - name: Default
     damage: 34
-    speed: 1
+    speed: 25
     explosionParticles: {fileID: 8526169634949234880, guid: 898d98e2d4b449a439f6af435bcb69ab,
       type: 3}
     effectObject: {fileID: 1103090475875641398, guid: 4884d8cb283aac94399c7c0182f0635e,
@@ -71,7 +71,7 @@ MonoBehaviour:
       type: 3}
   - name: Beer
     damage: 34
-    speed: 1
+    speed: 25
     explosionParticles: {fileID: 8526169634949234880, guid: 898d98e2d4b449a439f6af435bcb69ab,
       type: 3}
     effectObject: {fileID: 46161709763851351, guid: dc32e2d9f589f10469e8f294892df73e,
@@ -80,7 +80,7 @@ MonoBehaviour:
       type: 3}
   - name: Clock
     damage: 34
-    speed: 1
+    speed: 25
     explosionParticles: {fileID: 8526169634949234880, guid: 898d98e2d4b449a439f6af435bcb69ab,
       type: 3}
     effectObject: {fileID: 46161709763851351, guid: dc32e2d9f589f10469e8f294892df73e,
@@ -89,7 +89,7 @@ MonoBehaviour:
       type: 3}
   - name: Impulse
     damage: 0
-    speed: 1
+    speed: 25
     explosionParticles: {fileID: 8526169634949234880, guid: 898d98e2d4b449a439f6af435bcb69ab,
       type: 3}
     effectObject: {fileID: 46161709763851351, guid: dc32e2d9f589f10469e8f294892df73e,
@@ -97,8 +97,8 @@ MonoBehaviour:
     projectilePrefab: {fileID: 7852380476762075272, guid: 141ebd6128cfd38458cd38b8793310a1,
       type: 3}
   - name: Double Damage
-    damage: 68
-    speed: 1
+    damage: 69
+    speed: 25
     explosionParticles: {fileID: 8526169634949234880, guid: 898d98e2d4b449a439f6af435bcb69ab,
       type: 3}
     effectObject: {fileID: 46161709763851351, guid: dc32e2d9f589f10469e8f294892df73e,
@@ -107,7 +107,7 @@ MonoBehaviour:
       type: 3}
   - name: Smoke
     damage: 0
-    speed: 1
+    speed: 25
     explosionParticles: {fileID: 8526169634949234880, guid: 898d98e2d4b449a439f6af435bcb69ab,
       type: 3}
     effectObject: {fileID: 46161709763851351, guid: dc32e2d9f589f10469e8f294892df73e,
@@ -116,7 +116,7 @@ MonoBehaviour:
       type: 3}
   - name: Power Shot
     damage: 51
-    speed: 1
+    speed: 25
     explosionParticles: {fileID: 8526169634949234880, guid: 898d98e2d4b449a439f6af435bcb69ab,
       type: 3}
     effectObject: {fileID: 46161709763851351, guid: dc32e2d9f589f10469e8f294892df73e,
@@ -125,7 +125,7 @@ MonoBehaviour:
       type: 3}
   - name: Barrage
     damage: 25
-    speed: 1
+    speed: 25
     explosionParticles: {fileID: 8526169634949234880, guid: 898d98e2d4b449a439f6af435bcb69ab,
       type: 3}
     effectObject: {fileID: 46161709763851351, guid: dc32e2d9f589f10469e8f294892df73e,

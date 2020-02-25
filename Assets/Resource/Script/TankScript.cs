@@ -124,26 +124,34 @@ public class TankScript : MonoBehaviour
     }
 
     IEnumerator Respawn ()
-    {     
+    {
+
+        /* Once we get a player and game manager we can move this stuff to over
+         and make the code cleaner*/
+
         //Disable all the render meshes in the tank
         foreach (MeshRenderer mr in meshes)
         {
             mr.enabled = false;
         }
 
+        rb.detectCollisions = false;
+        rb.useGravity = false;
+
         yield return new WaitForSeconds(respawnTime);
         
         //Move the tank to its spawn point and reset its health 
         transform.position = spawnPoint.transform.position;
         health = 100f;
-        
+         
         //Enable all the meshes 
         foreach (MeshRenderer mr in meshes)
         {
             mr.enabled = true;
         }
 
-
+        rb.detectCollisions = true;
+        rb.useGravity = true;
     }
 
     void Die ()
