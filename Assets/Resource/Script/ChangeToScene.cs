@@ -5,12 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class ChangeToScene : MonoBehaviour
 {
-    
-    public string nameOfScene;
-  
-    public void ChangeScene()
+    //This script allows a button to take a name of a scene and load it.
+    public void ChangeScene(string nameOfScene)
     {
         SceneManager.LoadScene(nameOfScene);
     }
-
 }
