@@ -13,7 +13,7 @@ public class PickupScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SetPickup(4);
+        SetPickup(Random.Range(0,5));
     }
 
     // Update is called once per frame

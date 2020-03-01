@@ -39,8 +39,12 @@ public class TankScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Get/Set HUDController
         hudController = (HUDScript)FindObjectOfType(typeof(HUDScript));
+        RequestHUDUpdate();
+
         rb = GetComponent<Rigidbody>();
+
         //Set Input Axes
         verticalAccessName = "Vertical" + playerNumber;
         horizontalAccessName = "Horizontal" + playerNumber;
@@ -66,7 +70,6 @@ public class TankScript : MonoBehaviour
     {
         Move();
     }
-
 
     public void Move()
     {
@@ -106,12 +109,18 @@ public class TankScript : MonoBehaviour
     public void ChangeHealth (float hp)
     {
         health += hp;
-        hudController.UpdateHUD(playerNumber, health, currentPowerup);
+        RequestHUDUpdate();
         if (health <= 0f)
         {
             Die();
         }
     }
+
+    public void ChangePowerup(string powerup)
+    {
+        currentPowerup = powerup;
+    }
+    //Ground Detection
     void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
@@ -119,7 +128,7 @@ public class TankScript : MonoBehaviour
             onGround = true;
         }
     }
-    private void OnCollisionExit(Collision collision)
+    void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
@@ -151,7 +160,7 @@ public class TankScript : MonoBehaviour
         transform.position = spawnPoint.transform.position;
         health = 100f;
         currentPowerup = "None";
-        hudController.UpdateHUD(playerNumber, health, currentPowerup);
+        RequestHUDUpdate();
         //Enable all the meshes 
         foreach (MeshRenderer mr in meshes)
         {
@@ -167,6 +176,11 @@ public class TankScript : MonoBehaviour
         //TODO - Create a better affect for the tank dying, explosion 
         Debug.Log("Player " + playerNumber + " is dead");    
         StartCoroutine(Respawn());
+    }
+
+    void RequestHUDUpdate ()
+    {
+        hudController.UpdateHUD(playerNumber, health, currentPowerup);
     }
 
 
