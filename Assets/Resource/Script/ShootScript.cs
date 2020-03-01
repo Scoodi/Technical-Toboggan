@@ -9,9 +9,10 @@ public class ShootScript : MonoBehaviour
     public GameObject projectile;
     public float speed = 1f;
     public float shootSpeed = 1f;
+    public int currentProjectile = 0;
 
     private bool onCooldown = false;
-     private string xAccessName;
+    private string xAccessName;
     private string yAccessName;
 
     // Start is called before the first frame update
@@ -33,7 +34,12 @@ public class ShootScript : MonoBehaviour
         {
             if (!onCooldown)
             {
-                Instantiate(projectile, shootPoint.position, shootPoint.rotation);
+                GameObject g = Instantiate(projectile, shootPoint.position, shootPoint.rotation);
+                g.GetComponent<ProjectileScript>().SetProjectile(currentProjectile);
+                if (currentProjectile != 0)
+                {
+                    currentProjectile = 0;
+                }
                 StartCoroutine(ShootCooldown());
             }
         }

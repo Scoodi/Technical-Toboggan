@@ -15,7 +15,7 @@ public class ProjectileScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SetProjectile(0);
+
     }
     // Update is called once per frame
     void Update()

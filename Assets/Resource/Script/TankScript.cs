@@ -26,6 +26,7 @@ public class TankScript : MonoBehaviour
     private string currentPowerup = "None";
     private HUDScript hudController;
     private Rigidbody rb;
+    private ShootScript shootController;
     private bool onGround = true;
 
     MeshRenderer[] meshes;
@@ -43,6 +44,7 @@ public class TankScript : MonoBehaviour
         hudController = (HUDScript)FindObjectOfType(typeof(HUDScript));
         RequestHUDUpdate();
 
+        shootController = GetComponentInChildren<ShootScript>();
         rb = GetComponent<Rigidbody>();
 
         //Set Input Axes
@@ -116,9 +118,11 @@ public class TankScript : MonoBehaviour
         }
     }
 
-    public void ChangePowerup(string powerup)
+    public void ChangePowerup(string powerup, int projectileIndex)
     {
         currentPowerup = powerup;
+        shootController.currentProjectile = projectileIndex;
+        RequestHUDUpdate();
     }
     //Ground Detection
     void OnCollisionStay(Collision collision)
