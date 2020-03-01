@@ -23,6 +23,8 @@ public class TankScript : MonoBehaviour
     private float verticalMove;
     private float horizontalMove;
 
+    private string currentPowerup = "None";
+    private HUDScript hudController;
     private Rigidbody rb;
     private bool onGround = true;
 
@@ -37,6 +39,7 @@ public class TankScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        hudController = (HUDScript)FindObjectOfType(typeof(HUDScript));
         rb = GetComponent<Rigidbody>();
         //Set Input Axes
         verticalAccessName = "Vertical" + playerNumber;
@@ -103,6 +106,7 @@ public class TankScript : MonoBehaviour
     public void ChangeHealth (float hp)
     {
         health += hp;
+        hudController.UpdateHUD(playerNumber, health, currentPowerup);
         if (health <= 0f)
         {
             Die();
@@ -140,13 +144,14 @@ public class TankScript : MonoBehaviour
 
         yield return new WaitForSeconds(respawnTime);
 
-        //Move the tank to its spawn point and reset its health 
+        //Move the tank to its spawn point, reset health/powerup, and update UI
         rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
         transform.rotation = spawnPoint.transform.rotation;
         transform.position = spawnPoint.transform.position;
         health = 100f;
-         
+        currentPowerup = "None";
+        hudController.UpdateHUD(playerNumber, health, currentPowerup);
         //Enable all the meshes 
         foreach (MeshRenderer mr in meshes)
         {
