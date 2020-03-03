@@ -40,7 +40,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3561499900895208575}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 1
@@ -61,25 +61,30 @@ MonoBehaviour:
   - name: Beer
     effectObject: {fileID: 1103090475875641398, guid: 4884d8cb283aac94399c7c0182f0635e,
       type: 3}
+    projectileIndex: 1
     pickupPrefab: {fileID: 2377288869696776860, guid: fbd4d822fd3bd7a4091833568d56d766,
       type: 3}
   - name: Clock
     effectObject: {fileID: 1103090475875641398, guid: 4884d8cb283aac94399c7c0182f0635e,
       type: 3}
+    projectileIndex: 2
     pickupPrefab: {fileID: 2403243548781946703, guid: 141cff7182606e048bb44ea113721f06,
       type: 3}
   - name: Impulse
     effectObject: {fileID: 1103090475875641398, guid: 4884d8cb283aac94399c7c0182f0635e,
       type: 3}
+    projectileIndex: 3
     pickupPrefab: {fileID: 5732676784521225680, guid: a727f2d6c9734094bb293582e4624795,
       type: 3}
   - name: Damage
     effectObject: {fileID: 1103090475875641398, guid: 4884d8cb283aac94399c7c0182f0635e,
       type: 3}
+    projectileIndex: 4
     pickupPrefab: {fileID: 3274157369242092261, guid: 4b7ce560e1e8cb14c8b16dc30e44db3c,
       type: 3}
   - name: Smoke
     effectObject: {fileID: 1103090475875641398, guid: 4884d8cb283aac94399c7c0182f0635e,
       type: 3}
+    projectileIndex: 5
     pickupPrefab: {fileID: 8982678741157255585, guid: ef42352820f597f40bcfa0aba753476a,
       type: 3}

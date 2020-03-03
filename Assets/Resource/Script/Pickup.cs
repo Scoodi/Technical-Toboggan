@@ -8,5 +8,6 @@ public class Pickup
 {
     public string name;
     public GameObject effectObject;
+    public int projectileIndex;
     public GameObject pickupPrefab;
 }

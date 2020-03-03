@@ -9,11 +9,12 @@ public class PickupScript : MonoBehaviour
     private string type;
     private GameObject effectObject;
     private GameObject modelPrefab;
+    private int projectileIndex;
 
     // Start is called before the first frame update
     void Start()
     {
-        SetPickup(4);
+        SetPickup(Random.Range(0,5));
     }
 
     // Update is called once per frame
@@ -27,17 +28,18 @@ public class PickupScript : MonoBehaviour
         //Sets internal variables to those from the array
         type = pickups[pickupIndex].name;
         effectObject = pickups[pickupIndex].effectObject;
+        projectileIndex = pickups[pickupIndex].projectileIndex;
 
         Instantiate(pickups[pickupIndex].pickupPrefab, transform.position, Quaternion.identity, transform);
         gameObject.name = "Pickup (" + type + ")";
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collider)
     {
-        TankScript tank = collision.gameObject.GetComponent<TankScript>();
+        TankScript tank = collider.gameObject.GetComponent<TankScript>();
         if (tank != null)
         {
-            Instantiate(effectObject, transform.position, Quaternion.identity);
+            tank.ChangePowerup(type, projectileIndex);
             Destroy(gameObject);
         }
     }

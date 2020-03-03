@@ -23,7 +23,10 @@ public class TankScript : MonoBehaviour
     private float verticalMove;
     private float horizontalMove;
 
+    private string currentPowerup = "None";
+    private HUDScript hudController;
     private Rigidbody rb;
+    private ShootScript shootController;
     private bool onGround = true;
 
     MeshRenderer[] meshes;
@@ -37,7 +40,13 @@ public class TankScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Get/Set HUDController
+        hudController = (HUDScript)FindObjectOfType(typeof(HUDScript));
+        RequestHUDUpdate();
+
+        shootController = GetComponentInChildren<ShootScript>();
         rb = GetComponent<Rigidbody>();
+
         //Set Input Axes
         verticalAccessName = "Vertical" + playerNumber;
         horizontalAccessName = "Horizontal" + playerNumber;
@@ -63,7 +72,6 @@ public class TankScript : MonoBehaviour
     {
         Move();
     }
-
 
     public void Move()
     {
@@ -103,11 +111,20 @@ public class TankScript : MonoBehaviour
     public void ChangeHealth (float hp)
     {
         health += hp;
+        RequestHUDUpdate();
         if (health <= 0f)
         {
             Die();
         }
     }
+
+    public void ChangePowerup(string powerup, int projectileIndex)
+    {
+        currentPowerup = powerup;
+        shootController.currentProjectile = projectileIndex;
+        RequestHUDUpdate();
+    }
+    //Ground Detection
     void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
@@ -115,7 +132,7 @@ public class TankScript : MonoBehaviour
             onGround = true;
         }
     }
-    private void OnCollisionExit(Collision collision)
+    void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
@@ -140,13 +157,14 @@ public class TankScript : MonoBehaviour
 
         yield return new WaitForSeconds(respawnTime);
 
-        //Move the tank to its spawn point and reset its health 
+        //Move the tank to its spawn point, reset health/powerup, and update UI
         rb.velocity = Vector3.zero;
         rb.angularVelocity = Vector3.zero;
         transform.rotation = spawnPoint.transform.rotation;
         transform.position = spawnPoint.transform.position;
         health = 100f;
-         
+        currentPowerup = "None";
+        RequestHUDUpdate();
         //Enable all the meshes 
         foreach (MeshRenderer mr in meshes)
         {
@@ -162,6 +180,11 @@ public class TankScript : MonoBehaviour
         //TODO - Create a better affect for the tank dying, explosion 
         Debug.Log("Player " + playerNumber + " is dead");    
         StartCoroutine(Respawn());
+    }
+
+    void RequestHUDUpdate ()
+    {
+        hudController.UpdateHUD(playerNumber, health, currentPowerup);
     }
 
 
