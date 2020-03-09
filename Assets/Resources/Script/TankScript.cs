@@ -17,7 +17,7 @@ public class TankScript : MonoBehaviour
     private string bAccessName;
 
 
-    [SerializeField] private Transform spawnPoint;
+    public Transform spawnPoint;
     [SerializeField] private float health = 100f;
     [SerializeField] private float respawnTime;
     private float verticalMove;
@@ -142,7 +142,6 @@ public class TankScript : MonoBehaviour
 
     IEnumerator Respawn ()
     {
-
         /* Once we get a player and game manager we can move this stuff to over
          and make the code cleaner*/
 
@@ -152,27 +151,28 @@ public class TankScript : MonoBehaviour
             mr.enabled = false;
         }
 
+        //Deactivate the rigid body
         rb.detectCollisions = false;
-        rb.useGravity = false;
+        rb.isKinematic = true;
 
         yield return new WaitForSeconds(respawnTime);
 
+        //Reset the rigid body
+        rb.detectCollisions = true;
+        rb.isKinematic = false;
+
         //Move the tank to its spawn point, reset health/powerup, and update UI
-        rb.velocity = Vector3.zero;
-        rb.angularVelocity = Vector3.zero;
         transform.rotation = spawnPoint.transform.rotation;
         transform.position = spawnPoint.transform.position;
         health = 100f;
         currentPowerup = "None";
-        RequestHUDUpdate();
+        RequestHUDUpdate();    
+      
         //Enable all the meshes 
         foreach (MeshRenderer mr in meshes)
         {
             mr.enabled = true;
         }
-
-        rb.detectCollisions = true;
-        rb.useGravity = true;
     }
 
     void Die ()
