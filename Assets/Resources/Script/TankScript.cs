@@ -17,7 +17,7 @@ public class TankScript : MonoBehaviour
     private string bAccessName;
 
 
-    [SerializeField] private Transform spawnPoint;
+    public Transform spawnPoint;
     [SerializeField] private float health = 100f;
     [SerializeField] private float respawnTime;
     private float verticalMove;
@@ -28,6 +28,8 @@ public class TankScript : MonoBehaviour
     private Rigidbody rb;
     private ShootScript shootController;
     private bool onGround = true;
+
+    public int score;
 
     MeshRenderer[] meshes;
 
@@ -142,7 +144,6 @@ public class TankScript : MonoBehaviour
 
     IEnumerator Respawn ()
     {
-
         /* Once we get a player and game manager we can move this stuff to over
          and make the code cleaner*/
 
@@ -152,39 +153,43 @@ public class TankScript : MonoBehaviour
             mr.enabled = false;
         }
 
+        //Deactivate the rigid body
         rb.detectCollisions = false;
-        rb.useGravity = false;
+        rb.isKinematic = true;
 
         yield return new WaitForSeconds(respawnTime);
 
+        //Reset the rigid body
+        rb.detectCollisions = true;
+        rb.isKinematic = false;
+
         //Move the tank to its spawn point, reset health/powerup, and update UI
-        rb.velocity = Vector3.zero;
-        rb.angularVelocity = Vector3.zero;
         transform.rotation = spawnPoint.transform.rotation;
         transform.position = spawnPoint.transform.position;
         health = 100f;
         currentPowerup = "None";
-        RequestHUDUpdate();
+        RequestHUDUpdate();    
+      
         //Enable all the meshes 
         foreach (MeshRenderer mr in meshes)
         {
             mr.enabled = true;
         }
-
-        rb.detectCollisions = true;
-        rb.useGravity = true;
     }
 
     void Die ()
     {
+        //Give the other player points
+        ScoreManager.instance.GivePlayerScore(playerNumber);
+
         //TODO - Create a better affect for the tank dying, explosion 
         Debug.Log("Player " + playerNumber + " is dead");    
         StartCoroutine(Respawn());
     }
 
-    void RequestHUDUpdate ()
+    public void RequestHUDUpdate ()
     {
-        hudController.UpdateHUD(playerNumber, health, currentPowerup);
+        hudController.UpdateHUD(playerNumber, health, currentPowerup, score);
     }
 
 

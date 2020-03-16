@@ -474,6 +474,7 @@ MonoBehaviour:
     type: 3}
   speed: 1
   shootSpeed: 1
+  currentProjectile: 0
 --- !u!1 &8500594935913067672
 GameObject:
   m_ObjectHideFlags: 0
@@ -525,12 +526,12 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0
+    y: 0.5
     width: 1
-    height: 1
+    height: 0.5
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 70
   orthographic: 0
   orthographic size: 5
   m_Depth: -1

@@ -7,10 +7,11 @@ public class HUDScript : MonoBehaviour
 {
     public Text[] playerHP;
     public Text[] playerPowerup;
+    public Text[] playerScore;
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -19,10 +20,12 @@ public class HUDScript : MonoBehaviour
         
     }
 
-    public void UpdateHUD(int playerNum, float hp, string powerup)
+    public void UpdateHUD(int playerNum, float hp, string powerup, int score)
     {
         playerNum--;
         playerHP[playerNum].text = "HP: " + hp.ToString();
         playerPowerup[playerNum].text = "Powerup: " + powerup;
+        playerScore[playerNum].text = "Score: " + score;
+        
     }
 }
