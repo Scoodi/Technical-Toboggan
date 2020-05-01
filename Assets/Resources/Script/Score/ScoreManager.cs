@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class ScoreManager : MonoBehaviour
 {  
     private TankScript playerOne;
@@ -28,8 +29,6 @@ public class ScoreManager : MonoBehaviour
     {
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
 
-        Debug.Log("Size of array is:" + players.Length.ToString());
-
         playerOne = players[0].GetComponent<TankScript>();
         playerTwo = players[1].GetComponent<TankScript>();
         
@@ -41,7 +40,7 @@ public class ScoreManager : MonoBehaviour
         }
     }
 
-    public void GivePlayerScore(int argPlayerThatDied)
+    public void GivePlayerScoreForKill(int argPlayerThatDied)
     {
         /*
          * When a player dies, we call this function to give the other player points 
@@ -62,6 +61,33 @@ public class ScoreManager : MonoBehaviour
 
         }
 
+    }
+
+    public void GiveZoneScore(int argPlayerNumber)
+    {
+        
+        if (1 == argPlayerNumber)
+        {
+            playerOne.score += 1;
+            playerOne.RequestHUDUpdate();
+        }
+        else if (2 == argPlayerNumber)
+        {
+            playerTwo.score += 1;
+            playerTwo.RequestHUDUpdate();
+        }
+
+    }
+
+    public int[] GetPlayerScores()
+    {
+        //Return the current player scores 
+        int[] scores = new int[2];
+
+        scores[0] = playerOne.score;
+        scores[1] = playerTwo.score;
+
+        return scores; 
     }
  
 }

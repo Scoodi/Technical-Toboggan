@@ -20,7 +20,6 @@ public class CharacterSelector : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         selectionStorage = (SelectionStorage)FindObjectOfType(typeof(SelectionStorage));
 
         characters = new GameObject[transform.childCount];

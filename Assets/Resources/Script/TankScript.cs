@@ -127,20 +127,20 @@ public class TankScript : MonoBehaviour
         RequestHUDUpdate();
     }
     //Ground Detection
-    void OnCollisionStay(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            onGround = true;
-        }
-    }
-    void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            onGround = false;
-        }
-    }
+    //void OnCollisionStay(Collision collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Ground"))
+    //    {
+    //        onGround = true;
+    //    }
+    //}
+    //void OnCollisionExit(Collision collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Ground"))
+    //    {
+    //        onGround = false;
+    //    }
+    //}
 
     IEnumerator Respawn ()
     {
@@ -180,7 +180,7 @@ public class TankScript : MonoBehaviour
     void Die ()
     {
         //Give the other player points
-        ScoreManager.instance.GivePlayerScore(playerNumber);
+        ScoreManager.instance.GivePlayerScoreForKill(playerNumber);
 
         //TODO - Create a better affect for the tank dying, explosion 
         Debug.Log("Player " + playerNumber + " is dead");    

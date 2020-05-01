@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class OnLevelLoad : MonoBehaviour
-{
-    
+{    
     private CharacterObject p1Character;
 
     public Transform playerOneSpawnPoint;
@@ -42,9 +41,7 @@ public class OnLevelLoad : MonoBehaviour
             //Player Two Load
             var p2Character = Resources.Load<CharacterObject>("Characters/Character" + ss.GetSelection(2).ToString());
             p2Character.CreateInstance(playerTwoSpawnPoint, 2);
-        }
-
-      
+        }     
       
     }
 
