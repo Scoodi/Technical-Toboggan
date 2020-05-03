@@ -19,7 +19,7 @@ public class TankScript : MonoBehaviour
 
     public Transform spawnPoint;
     [SerializeField] private float health = 100f;
-    [SerializeField] private float respawnTime;
+    [SerializeField] private float respawnTime = 1;
     private float verticalMove;
     private float horizontalMove;
 
@@ -127,20 +127,20 @@ public class TankScript : MonoBehaviour
         RequestHUDUpdate();
     }
     //Ground Detection
-    //void OnCollisionStay(Collision collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Ground"))
-    //    {
-    //        onGround = true;
-    //    }
-    //}
-    //void OnCollisionExit(Collision collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Ground"))
-    //    {
-    //        onGround = false;
-    //    }
-    //}
+    void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            onGround = true;
+        }
+    }
+    void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            onGround = false;
+        }
+    }
 
     IEnumerator Respawn ()
     {

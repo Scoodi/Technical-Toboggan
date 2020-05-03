@@ -34,10 +34,8 @@ public static class SaveLoadManager
         {
             Debug.Log("File does not exist");
             return null;
-        }
-       
+        }       
     }
-
 }
 
 [Serializable]
@@ -52,6 +50,7 @@ public class PlayerData
         highScores = SaveLoadManager.LoadScores();
 
 
+        //TODO - Insert Score in correct position 
         for (int i = 0; i < 5; i++)
         {
             if (currentScores[0] > highScores[i])
@@ -60,8 +59,6 @@ public class PlayerData
             }
            
         }
-
     }
-
 }
 

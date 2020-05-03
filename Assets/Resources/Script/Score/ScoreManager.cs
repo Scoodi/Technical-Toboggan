@@ -89,5 +89,4 @@ public class ScoreManager : MonoBehaviour
 
         return scores; 
     }
- 
 }

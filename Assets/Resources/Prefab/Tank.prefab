@@ -248,7 +248,7 @@ GameObject:
   - component: {fileID: 8500594934794634202}
   m_Layer: 0
   m_Name: Tank
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -311,12 +311,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01754806f77cb6d4a97883c49af434d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerNumber: 1
+  playerNumber: 2
   speed: 10
   turnSpeed: 2
   spawnPoint: {fileID: 0}
   health: 100
   respawnTime: 2
+  score: 0
 --- !u!1 &8500594935310249762
 GameObject:
   m_ObjectHideFlags: 0
@@ -468,7 +469,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0a7c5b002263f54ab34c2d8d333f23f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerNumber: 1
+  playerNumber: 2
   shootPoint: {fileID: 8500594935310249765}
   projectile: {fileID: 4335602945827953437, guid: 1532d1f670bd78b40b1c6049b61d1d7d,
     type: 3}
@@ -526,7 +527,7 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.5
+    y: 0
     width: 1
     height: 0.5
   near clip plane: 0.3

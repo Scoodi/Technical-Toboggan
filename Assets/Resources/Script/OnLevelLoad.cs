@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Analytics;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class OnLevelLoad : MonoBehaviour
 {    
@@ -11,9 +13,19 @@ public class OnLevelLoad : MonoBehaviour
 
     [SerializeField] private int p1Selection = 1;
     [SerializeField] private int p2Selection = 1;
+
+    [SerializeField] private float totalGameTime = 600;
+    public float timeRemaining;
+
+    private HUDScript hudController;
+
     // Start is called before the first frame update
     void Start()
     {
+        //Set the time remaining and get the hud script to display the remaining time 
+        timeRemaining = totalGameTime;
+        hudController = (HUDScript)FindObjectOfType(typeof(HUDScript));
+
         //Get the players choices of character 
         GameObject go = GameObject.FindGameObjectWithTag("GameController");
                                
@@ -45,5 +57,34 @@ public class OnLevelLoad : MonoBehaviour
       
     }
 
+    private void Update()
+    {
+        timeRemaining -= Time.deltaTime;
+        hudController.UpdateHUD(Mathf.RoundToInt(timeRemaining));
+
+        if (timeRemaining <= 0)
+        {
+            EndLevel();
+        }
+    }
+
+    private void EndLevel()
+    {
+        //Show the winner 
+        //Get the player scores
+        int[] scores = ScoreManager.instance.GetPlayerScores();
+
+        if (scores[0] > scores[1])
+        {
+            //PlayerOne wins 
+            
+        }
+        else
+        {
+            //PlayerTwo wins
+        }
+
+        //Save to scores if high score is set 
+    }
 
 }
