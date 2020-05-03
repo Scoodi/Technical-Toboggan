@@ -9,10 +9,12 @@ public static class SaveLoadManager
 {
     public static void SaveScore(ScoreManager argScore)
     {
+        //Create the data to save 
+        PlayerData data = new PlayerData(argScore);
+
         BinaryFormatter bf = new BinaryFormatter();
         FileStream stream = new FileStream(Application.persistentDataPath + "/score.sav", FileMode.Create);
 
-        PlayerData data = new PlayerData(argScore);
         bf.Serialize(stream, data);
         stream.Close();
     }
@@ -33,7 +35,8 @@ public static class SaveLoadManager
         else
         {
             Debug.Log("File does not exist");
-            return null;
+            int[] nothing = new int[5];
+            return nothing;
         }       
     }
 }
@@ -49,15 +52,34 @@ public class PlayerData
         currentScores = argScore.GetPlayerScores();
         highScores = SaveLoadManager.LoadScores();
 
-
         //TODO - Insert Score in correct position 
-        for (int i = 0; i < 5; i++)
+        for (int i = 0; i < highScores.Length; i++)
         {
-            if (currentScores[0] > highScores[i])
+            for (int s = 0; s < 2; s++)
             {
-                int[] tempArray = new int[5];
+                if (currentScores[s] > highScores[i])
+                {
+                    int[] tempArray = new int[5];
+
+                    //Get the scores higher than the current
+                    for (int j = 0; j < i; j++)
+                    {
+                        tempArray[j] = highScores[j];
+                    }
+
+                    //Score that we have 
+                    tempArray[i] = currentScores[s];
+
+                    //Scores lower than current 
+                    for (int j = i + 1; j < highScores.Length - 1; j++)
+                    {
+                        tempArray[j] = highScores[j - 1];
+                    }
+
+                    highScores = tempArray;
+
+                }
             }
-           
         }
     }
 }

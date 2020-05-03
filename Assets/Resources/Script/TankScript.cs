@@ -16,7 +16,6 @@ public class TankScript : MonoBehaviour
     private string aAccessName;
     private string bAccessName;
 
-
     public Transform spawnPoint;
     [SerializeField] private float health = 100f;
     [SerializeField] private float respawnTime = 1;

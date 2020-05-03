@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class HUDScript : MonoBehaviour
 {
@@ -10,6 +11,8 @@ public class HUDScript : MonoBehaviour
     public Text[] playerPowerup;
     public Text[] playerScore;
     public Text timeRemaining;
+    public TextMeshProUGUI gameOverText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,5 +38,32 @@ public class HUDScript : MonoBehaviour
         playerHP[playerNum].text = "HP: " + hp.ToString();
         playerPowerup[playerNum].text = "Powerup: " + powerup;
         playerScore[playerNum].text = "Score: " + score;
+    }
+
+    public void GameOverMessage(int argState)
+    {
+        //States
+        //0 - Player One Wins
+        //1 - Player Two Wins
+        //2 - Draw
+
+        gameOverText.gameObject.SetActive(true);
+
+        switch (argState)
+        {
+            case 0:
+                gameOverText.text = "Player One Wins";
+                break;
+            case 1:
+                gameOverText.text = "Player Two Wins";
+                break;
+            case 2:
+                gameOverText.text = "Game is a draw";
+                break;
+            default:
+                Debug.Log("GameOverMessage not passed suitable value");
+                break;
+        }
+
     }
  }

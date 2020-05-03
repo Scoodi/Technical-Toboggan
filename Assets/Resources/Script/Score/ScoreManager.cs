@@ -8,6 +8,8 @@ public class ScoreManager : MonoBehaviour
     private TankScript playerOne;
     private TankScript playerTwo;
 
+    [SerializeField] private int scoreForKill = 5;
+
     #region Singleton  
     public static ScoreManager instance = null;
     private void Awake()
@@ -48,19 +50,17 @@ public class ScoreManager : MonoBehaviour
         switch (argPlayerThatDied)
         {
             case 1:
-                playerTwo.score += 1;
+                playerTwo.score += scoreForKill;
                 playerTwo.RequestHUDUpdate();
                 break;
             case 2:
-                playerOne.score += 1;
+                playerOne.score += scoreForKill;
                 playerOne.RequestHUDUpdate();
                 break;
             default:
                 Debug.Log("Error adding score");
                 break;
-
         }
-
     }
 
     public void GiveZoneScore(int argPlayerNumber)
