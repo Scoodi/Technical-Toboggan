@@ -23,7 +23,7 @@ public class OnLevelLoad : MonoBehaviour
     private HUDScript hudController;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         //Set the time remaining and get the hud script to display the remaining time 
         timeRemaining = totalGameTime;

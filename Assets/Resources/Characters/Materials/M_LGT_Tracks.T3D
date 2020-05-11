@@ -1,0 +1,163 @@
+Begin Object Class=/Script/Engine.Material Name="M_LGT_Tracks"
+   Begin Object Class=/Script/UnrealEd.SceneThumbnailInfoWithPrimitive Name="SceneThumbnailInfoWithPrimitive_0"
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionTextureSample Name="MaterialExpressionTextureSample_43"
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionTextureSample Name="MaterialExpressionTextureSample_41"
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionTextureSample Name="MaterialExpressionTextureSample_39"
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionTextureCoordinate Name="MaterialExpressionTextureCoordinate_0"
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionScalarParameter Name="MaterialExpressionScalarParameter_3"
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionScalarParameter Name="MaterialExpressionScalarParameter_2"
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionPanner Name="MaterialExpressionPanner_0"
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionMultiply Name="MaterialExpressionMultiply_13"
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionConstant3Vector Name="MaterialExpressionConstant3Vector_10"
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionConstant2Vector Name="MaterialExpressionConstant2Vector_2"
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionAppendVector Name="MaterialExpressionAppendVector_0"
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionAdd Name="MaterialExpressionAdd_13"
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionAdd Name="MaterialExpressionAdd_1"
+   End Object
+   Begin Object Name="SceneThumbnailInfoWithPrimitive_0"
+   End Object
+   Begin Object Name="MaterialExpressionTextureSample_43"
+      Texture=Texture2D'"/Game/CSC/Textures/T_LGT_Tracks_Normal.T_LGT_Tracks_Normal"'
+      SamplerType=SAMPLERTYPE_Normal
+      MaterialExpressionEditorX=-256
+      MaterialExpressionEditorY=496
+      MaterialExpressionGuid=85B7E9AA4E84B4B7A6BDA7837A9D727C
+      Material=Material'"M_LGT_Tracks"'
+      bCollapsed=True
+   End Object
+   Begin Object Name="MaterialExpressionTextureSample_41"
+      Texture=Texture2D'"/Game/CSC/Textures/T_LGT_Tracks_BaseColor.T_LGT_Tracks_BaseColor"'
+      MaterialExpressionEditorX=-512
+      MaterialExpressionEditorY=160
+      MaterialExpressionGuid=1741CC964B6177DC6555AFBB505487E4
+      Material=Material'"M_LGT_Tracks"'
+      bCollapsed=True
+   End Object
+   Begin Object Name="MaterialExpressionTextureSample_39"
+      Texture=Texture2D'"/Game/CSC/Textures/T_LGT_Tracks_OcclusionRoughnessMetallic.T_LGT_Tracks_OcclusionRoughnessMetallic"'
+      SamplerType=SAMPLERTYPE_LinearColor
+      MaterialExpressionEditorX=-480
+      MaterialExpressionEditorY=384
+      MaterialExpressionGuid=271A1EFC4A4EE82DBE7FCD947F318F32
+      Material=Material'"M_LGT_Tracks"'
+      bCollapsed=True
+   End Object
+   Begin Object Name="MaterialExpressionTextureCoordinate_0"
+      MaterialExpressionEditorX=-928
+      MaterialExpressionGuid=448D6C86448C4EB9A42DA1B800747C30
+      Material=Material'"M_LGT_Tracks"'
+   End Object
+   Begin Object Name="MaterialExpressionScalarParameter_3"
+      ParameterName="V_texCoord"
+      ExpressionGUID=36A3A8C648A5D929DE9348B8DA7954D5
+      MaterialExpressionEditorX=-1168
+      MaterialExpressionEditorY=400
+      MaterialExpressionGuid=71852B7F421EEBFF92663A975617A92D
+      Material=Material'"M_LGT_Tracks"'
+   End Object
+   Begin Object Name="MaterialExpressionScalarParameter_2"
+      ParameterName="U_texCoord"
+      ExpressionGUID=4F9708F6433B3B96B95BDFB648C1B383
+      MaterialExpressionEditorX=-1168
+      MaterialExpressionEditorY=304
+      MaterialExpressionGuid=71852B7F421EEBFF92663A975617A92D
+      Material=Material'"M_LGT_Tracks"'
+   End Object
+   Begin Object Name="MaterialExpressionPanner_0"
+      Coordinate=(Expression=MaterialExpressionTextureCoordinate'"M_LGT_Tracks:MaterialExpressionTextureCoordinate_0"')
+      SpeedY=0.238532
+      MaterialExpressionEditorX=-736
+      MaterialExpressionEditorY=-112
+      MaterialExpressionGuid=889504A341E4A6725CAB63B9D6DC6EE4
+      Material=Material'"M_LGT_Tracks"'
+   End Object
+   Begin Object Name="MaterialExpressionMultiply_13"
+      A=(Expression=MaterialExpressionConstant3Vector'"M_LGT_Tracks:MaterialExpressionConstant3Vector_10"')
+      B=(Expression=MaterialExpressionTextureSample'"M_LGT_Tracks:MaterialExpressionTextureSample_41"',Mask=1,MaskR=1,MaskG=1,MaskB=1)
+      MaterialExpressionEditorX=-288
+      MaterialExpressionEditorY=208
+      MaterialExpressionGuid=19D27818474A3EF68CBA26BA9B36E9F1
+      Material=Material'"M_LGT_Tracks"'
+   End Object
+   Begin Object Name="MaterialExpressionConstant3Vector_10"
+      Constant=(R=1.000000,G=1.000000,B=1.000000,A=1.000000)
+      MaterialExpressionEditorX=-496
+      MaterialExpressionEditorY=-80
+      MaterialExpressionGuid=A5831D8A4A2DD38D74575AA644EDDE9E
+      Material=Material'"M_LGT_Tracks"'
+   End Object
+   Begin Object Name="MaterialExpressionConstant2Vector_2"
+      MaterialExpressionEditorX=-1008
+      MaterialExpressionEditorY=224
+      MaterialExpressionGuid=BA46DACC41FC56AC49A63A994C701DB1
+      Material=Material'"M_LGT_Tracks"'
+   End Object
+   Begin Object Name="MaterialExpressionAppendVector_0"
+      A=(Expression=MaterialExpressionScalarParameter'"M_LGT_Tracks:MaterialExpressionScalarParameter_2"')
+      B=(Expression=MaterialExpressionScalarParameter'"M_LGT_Tracks:MaterialExpressionScalarParameter_3"')
+      MaterialExpressionEditorX=-960
+      MaterialExpressionEditorY=336
+      MaterialExpressionGuid=286080894AC34D74F2334DB496FF560D
+      Material=Material'"M_LGT_Tracks"'
+   End Object
+   Begin Object Name="MaterialExpressionAdd_13"
+      A=(Expression=MaterialExpressionTextureSample'"M_LGT_Tracks:MaterialExpressionTextureSample_41"',Mask=1,MaskR=1,MaskG=1,MaskB=1)
+      B=(Expression=MaterialExpressionMultiply'"M_LGT_Tracks:MaterialExpressionMultiply_13"')
+      MaterialExpressionEditorX=-160
+      MaterialExpressionEditorY=160
+      MaterialExpressionGuid=310DA7EF4C935EFB592E2DA54020F60A
+      Material=Material'"M_LGT_Tracks"'
+   End Object
+   Begin Object Name="MaterialExpressionAdd_1"
+      A=(Expression=MaterialExpressionTextureCoordinate'"M_LGT_Tracks:MaterialExpressionTextureCoordinate_0"')
+      B=(Expression=MaterialExpressionAppendVector'"M_LGT_Tracks:MaterialExpressionAppendVector_0"')
+      MaterialExpressionEditorX=-736
+      MaterialExpressionEditorY=320
+      MaterialExpressionGuid=4D755DF042DB1D7E422341AEA8C97EC3
+      Material=Material'"M_LGT_Tracks"'
+   End Object
+   BaseColor=(Expression=MaterialExpressionAdd'"MaterialExpressionAdd_13"')
+   Metallic=(Expression=MaterialExpressionTextureSample'"MaterialExpressionTextureSample_39"',OutputIndex=3,Mask=1,MaskB=1)
+   Roughness=(Expression=MaterialExpressionTextureSample'"MaterialExpressionTextureSample_39"',OutputIndex=2,Mask=1,MaskG=1)
+   Normal=(Expression=MaterialExpressionTextureSample'"MaterialExpressionTextureSample_43"',Mask=1,MaskR=1,MaskG=1,MaskB=1)
+   EmissiveColor=(Mask=1,MaskR=1,MaskG=1,MaskB=1)
+   AmbientOcclusion=(Expression=MaterialExpressionTextureSample'"MaterialExpressionTextureSample_39"',OutputIndex=1,Mask=1,MaskR=1)
+   CustomizedUVs(0)=(Expression=MaterialExpressionAdd'"MaterialExpressionAdd_1"')
+   NumCustomizedUVs=1
+   bUsedWithSkeletalMesh=True
+   EditorX=80
+   EditorY=-64
+   Expressions(0)=MaterialExpressionAdd'"MaterialExpressionAdd_13"'
+   Expressions(1)=MaterialExpressionTextureSample'"MaterialExpressionTextureSample_39"'
+   Expressions(2)=MaterialExpressionTextureSample'"MaterialExpressionTextureSample_43"'
+   Expressions(3)=MaterialExpressionTextureSample'"MaterialExpressionTextureSample_41"'
+   Expressions(4)=MaterialExpressionConstant3Vector'"MaterialExpressionConstant3Vector_10"'
+   Expressions(5)=MaterialExpressionMultiply'"MaterialExpressionMultiply_13"'
+   Expressions(6)=MaterialExpressionTextureCoordinate'"MaterialExpressionTextureCoordinate_0"'
+   Expressions(7)=MaterialExpressionPanner'"MaterialExpressionPanner_0"'
+   Expressions(8)=MaterialExpressionAdd'"MaterialExpressionAdd_1"'
+   Expressions(9)=MaterialExpressionConstant2Vector'"MaterialExpressionConstant2Vector_2"'
+   Expressions(10)=MaterialExpressionScalarParameter'"MaterialExpressionScalarParameter_2"'
+   Expressions(11)=MaterialExpressionAppendVector'"MaterialExpressionAppendVector_0"'
+   Expressions(12)=MaterialExpressionScalarParameter'"MaterialExpressionScalarParameter_3"'
+   bCanMaskedBeAssumedOpaque=True
+   StateId=BF35BF05443895BDD25FD2899805AF34
+   ReferencedTextureGuids(0)=031F820548151ECA94A933B30E8AE1BF
+   ReferencedTextureGuids(1)=F0AEE3B347673C1E6105748D15E7C167
+   ReferencedTextureGuids(2)=A55C26FB493A05D5C0E7789955EC7044
+   ThumbnailInfo=SceneThumbnailInfoWithPrimitive'"SceneThumbnailInfoWithPrimitive_0"'
+   LightingGuid=286F371A48584FF041A57791005729F4
+End Object

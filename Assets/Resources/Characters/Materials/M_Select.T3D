@@ -1,0 +1,60 @@
+Begin Object Class=/Script/Engine.Material Name="M_Select"
+   Begin Object Class=/Script/Engine.MaterialExpressionConstant Name="MaterialExpressionConstant_1"
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionConstant Name="MaterialExpressionConstant_3"
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionConstant Name="MaterialExpressionConstant_4"
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionConstant3Vector Name="MaterialExpressionConstant3Vector_6"
+   End Object
+   Begin Object Class=/Script/UnrealEd.SceneThumbnailInfoWithPrimitive Name="SceneThumbnailInfoWithPrimitive_0"
+   End Object
+   Begin Object Name="MaterialExpressionConstant_1"
+      R=0.119048
+      MaterialExpressionEditorX=-263
+      MaterialExpressionEditorY=344
+      MaterialExpressionGuid=0B583E4C4F6E75568D20139F7F35B81F
+      Material=Material'"M_Select"'
+   End Object
+   Begin Object Name="MaterialExpressionConstant_3"
+      MaterialExpressionEditorX=-320
+      MaterialExpressionEditorY=256
+      MaterialExpressionGuid=AAB98C584BF5BE71B32F00A7F080A030
+      Material=Material'"M_Select"'
+   End Object
+   Begin Object Name="MaterialExpressionConstant_4"
+      R=10.000000
+      MaterialExpressionEditorX=-320
+      MaterialExpressionEditorY=176
+      MaterialExpressionGuid=AAB98C584BF5BE71B32F00A7F080A030
+      Material=Material'"M_Select"'
+   End Object
+   Begin Object Name="MaterialExpressionConstant3Vector_6"
+      Constant=(R=1.000000,G=0.868055,B=0.000000,A=0.000000)
+      MaterialExpressionEditorX=-310
+      MaterialExpressionEditorY=16
+      MaterialExpressionGuid=7C127A1845482B6C70EC42983C397CF5
+      Material=Material'"M_Select"'
+   End Object
+   Begin Object Name="SceneThumbnailInfoWithPrimitive_0"
+   End Object
+   BaseColor=(Expression=MaterialExpressionConstant3Vector'"MaterialExpressionConstant3Vector_6"')
+   Specular=(Expression=MaterialExpressionConstant'"MaterialExpressionConstant_4"')
+   Roughness=(Expression=MaterialExpressionConstant'"MaterialExpressionConstant_3"')
+   EmissiveColor=(Expression=MaterialExpressionConstant3Vector'"MaterialExpressionConstant3Vector_6"')
+   Opacity=(Expression=MaterialExpressionConstant'"MaterialExpressionConstant_1"')
+   BlendMode=BLEND_Translucent
+   MaterialDecalResponse=MDR_None
+   TranslucencyLightingMode=TLM_Surface
+   bUsedWithSkeletalMesh=True
+   EditorX=80
+   EditorY=16
+   Expressions(0)=MaterialExpressionConstant3Vector'"MaterialExpressionConstant3Vector_6"'
+   Expressions(1)=MaterialExpressionConstant'"MaterialExpressionConstant_4"'
+   Expressions(2)=MaterialExpressionConstant'"MaterialExpressionConstant_3"'
+   Expressions(3)=MaterialExpressionConstant'"MaterialExpressionConstant_1"'
+   bCanMaskedBeAssumedOpaque=True
+   StateId=D6C5A3464ABDB17555C5BEB6246ADA94
+   ThumbnailInfo=SceneThumbnailInfoWithPrimitive'"SceneThumbnailInfoWithPrimitive_0"'
+   LightingGuid=C96EC45D43C2FA564F4C608DFEFAD673
+End Object

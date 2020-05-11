@@ -81,8 +81,9 @@ public class TankScript : MonoBehaviour
             return;
                   
         Vector3 movement = transform.right * Input.GetAxis(horizontalAccessName) + transform.forward * Input.GetAxis(verticalAccessName);
+        transform.position = transform.position + movement * speed * Time.deltaTime;
 
-        rb.MovePosition(rb.position + movement * speed * Time.deltaTime);
+        //rb.MovePosition(rb.position + movement * speed * Time.deltaTime);
     }
 
     void CheckForInput()
@@ -176,7 +177,7 @@ public class TankScript : MonoBehaviour
         }
     }
 
-    void Die ()
+    public void Die ()
     {
         //Give the other player points
         ScoreManager.instance.GivePlayerScoreForKill(playerNumber);

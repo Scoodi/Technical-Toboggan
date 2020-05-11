@@ -1,0 +1,95 @@
+Begin Object Class=/Script/Engine.Material Name="M_CSC_GaussGun"
+   Begin Object Class=/Script/Engine.MaterialExpressionAdd Name="MaterialExpressionAdd_2"
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionConstant3Vector Name="MaterialExpressionConstant3Vector_2"
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionMultiply Name="MaterialExpressionMultiply_2"
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionTextureSample Name="MaterialExpressionTextureSample_10"
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionTextureSample Name="MaterialExpressionTextureSample_11"
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionTextureSample Name="MaterialExpressionTextureSample_8"
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionTextureSample Name="MaterialExpressionTextureSample_9"
+   End Object
+   Begin Object Class=/Script/UnrealEd.SceneThumbnailInfoWithPrimitive Name="SceneThumbnailInfoWithPrimitive_0"
+   End Object
+   Begin Object Name="MaterialExpressionAdd_2"
+      A=(Expression=MaterialExpressionTextureSample'"M_CSC_GaussGun:MaterialExpressionTextureSample_11"',Mask=1,MaskR=1,MaskG=1,MaskB=1)
+      B=(Expression=MaterialExpressionMultiply'"M_CSC_GaussGun:MaterialExpressionMultiply_2"')
+      MaterialExpressionEditorX=-112
+      MaterialExpressionGuid=310DA7EF4C935EFB592E2DA54020F60A
+      Material=Material'"M_CSC_GaussGun"'
+   End Object
+   Begin Object Name="MaterialExpressionConstant3Vector_2"
+      Constant=(R=1.000000,G=1.000000,B=1.000000,A=1.000000)
+      MaterialExpressionEditorX=-448
+      MaterialExpressionEditorY=-240
+      MaterialExpressionGuid=A5831D8A4A2DD38D74575AA644EDDE9E
+      Material=Material'"M_CSC_GaussGun"'
+   End Object
+   Begin Object Name="MaterialExpressionMultiply_2"
+      A=(Expression=MaterialExpressionConstant3Vector'"M_CSC_GaussGun:MaterialExpressionConstant3Vector_2"')
+      B=(Expression=MaterialExpressionTextureSample'"M_CSC_GaussGun:MaterialExpressionTextureSample_11"',Mask=1,MaskR=1,MaskG=1,MaskB=1)
+      MaterialExpressionEditorX=-240
+      MaterialExpressionEditorY=-64
+      MaterialExpressionGuid=19D27818474A3EF68CBA26BA9B36E9F1
+      Material=Material'"M_CSC_GaussGun"'
+   End Object
+   Begin Object Name="MaterialExpressionTextureSample_10"
+      Texture=Texture2D'"/Game/CSC/Textures/T_CSC_Gauss_Emissive.T_CSC_Gauss_Emissive"'
+      MaterialExpressionEditorX=-448
+      MaterialExpressionEditorY=464
+      MaterialExpressionGuid=85B7E9AA4E84B4B7A6BDA7837A9D727C
+      Material=Material'"M_CSC_GaussGun"'
+   End Object
+   Begin Object Name="MaterialExpressionTextureSample_11"
+      Texture=Texture2D'"/Game/CSC/Textures/T_CSC_Gauss_BaseColor.T_CSC_Gauss_BaseColor"'
+      MaterialExpressionEditorX=-464
+      MaterialExpressionGuid=1741CC964B6177DC6555AFBB505487E4
+      Material=Material'"M_CSC_GaussGun"'
+   End Object
+   Begin Object Name="MaterialExpressionTextureSample_8"
+      Texture=Texture2D'"/Game/CSC/Textures/T_CSC_Gauss_OcclusionRoughnessMetallic.T_CSC_Gauss_OcclusionRoughnessMetallic"'
+      SamplerType=SAMPLERTYPE_LinearColor
+      MaterialExpressionEditorX=-432
+      MaterialExpressionEditorY=224
+      MaterialExpressionGuid=271A1EFC4A4EE82DBE7FCD947F318F32
+      Material=Material'"M_CSC_GaussGun"'
+   End Object
+   Begin Object Name="MaterialExpressionTextureSample_9"
+      Texture=Texture2D'"/Game/CSC/Textures/T_CSC_Gauss_Normal.T_CSC_Gauss_Normal"'
+      SamplerType=SAMPLERTYPE_Normal
+      MaterialExpressionEditorX=-208
+      MaterialExpressionEditorY=464
+      MaterialExpressionGuid=85B7E9AA4E84B4B7A6BDA7837A9D727C
+      Material=Material'"M_CSC_GaussGun"'
+   End Object
+   Begin Object Name="SceneThumbnailInfoWithPrimitive_0"
+   End Object
+   BaseColor=(Expression=MaterialExpressionAdd'"MaterialExpressionAdd_2"')
+   Metallic=(Expression=MaterialExpressionTextureSample'"MaterialExpressionTextureSample_8"',OutputIndex=3,Mask=1,MaskB=1)
+   Roughness=(Expression=MaterialExpressionTextureSample'"MaterialExpressionTextureSample_8"',OutputIndex=2,Mask=1,MaskG=1)
+   Normal=(Expression=MaterialExpressionTextureSample'"MaterialExpressionTextureSample_9"',Mask=1,MaskR=1,MaskG=1,MaskB=1)
+   EmissiveColor=(Expression=MaterialExpressionTextureSample'"MaterialExpressionTextureSample_10"',Mask=1,MaskR=1,MaskG=1,MaskB=1)
+   AmbientOcclusion=(Expression=MaterialExpressionTextureSample'"MaterialExpressionTextureSample_8"',OutputIndex=1,Mask=1,MaskR=1)
+   bUsedWithSkeletalMesh=True
+   EditorX=208
+   EditorY=48
+   Expressions(0)=MaterialExpressionAdd'"MaterialExpressionAdd_2"'
+   Expressions(1)=MaterialExpressionTextureSample'"MaterialExpressionTextureSample_8"'
+   Expressions(2)=MaterialExpressionTextureSample'"MaterialExpressionTextureSample_9"'
+   Expressions(3)=MaterialExpressionTextureSample'"MaterialExpressionTextureSample_10"'
+   Expressions(4)=MaterialExpressionTextureSample'"MaterialExpressionTextureSample_11"'
+   Expressions(5)=MaterialExpressionConstant3Vector'"MaterialExpressionConstant3Vector_2"'
+   Expressions(6)=MaterialExpressionMultiply'"MaterialExpressionMultiply_2"'
+   bCanMaskedBeAssumedOpaque=True
+   StateId=E19296734717E689386C068DFA6A39D5
+   ReferencedTextureGuids(0)=69CA9B144476CF695C0BE18BA54E4971
+   ReferencedTextureGuids(1)=C143F86E48F276440513FFA424829658
+   ReferencedTextureGuids(2)=A8DEE2474DBC2F3A1E32D69BC7F2CB86
+   ReferencedTextureGuids(3)=1E683E5E4CDF9E06D163D29A9CD82294
+   ThumbnailInfo=SceneThumbnailInfoWithPrimitive'"SceneThumbnailInfoWithPrimitive_0"'
+   LightingGuid=34BB44E14EF78C323B6ACDAC71AFACE7
+End Object

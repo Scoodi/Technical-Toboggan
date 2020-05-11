@@ -1,0 +1,97 @@
+Begin Object Class=/Script/Engine.Material Name="M_TB1_Floor"
+   Begin Object Class=/Script/Engine.MaterialExpressionAdd Name="MaterialExpressionAdd_13"
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionConstant3Vector Name="MaterialExpressionConstant3Vector_10"
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionMultiply Name="MaterialExpressionMultiply_13"
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionTextureCoordinate Name="MaterialExpressionTextureCoordinate_0"
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionTextureSample Name="MaterialExpressionTextureSample_1"
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionTextureSample Name="MaterialExpressionTextureSample_2"
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionTextureSample Name="MaterialExpressionTextureSample_39"
+   End Object
+   Begin Object Class=/Script/UnrealEd.SceneThumbnailInfoWithPrimitive Name="SceneThumbnailInfoWithPrimitive_0"
+   End Object
+   Begin Object Name="MaterialExpressionAdd_13"
+      A=(Expression=MaterialExpressionTextureSample'"M_TB1_Floor:MaterialExpressionTextureSample_2"',Mask=1,MaskR=1,MaskG=1,MaskB=1)
+      B=(Expression=MaterialExpressionMultiply'"M_TB1_Floor:MaterialExpressionMultiply_13"')
+      MaterialExpressionEditorX=-176
+      MaterialExpressionEditorY=16
+      MaterialExpressionGuid=310DA7EF4C935EFB592E2DA54020F60A
+      Material=Material'"M_TB1_Floor"'
+   End Object
+   Begin Object Name="MaterialExpressionConstant3Vector_10"
+      Constant=(R=0.300000,G=0.300000,B=0.300000,A=1.000000)
+      MaterialExpressionEditorX=-528
+      MaterialExpressionEditorY=-64
+      MaterialExpressionGuid=A5831D8A4A2DD38D74575AA644EDDE9E
+      Material=Material'"M_TB1_Floor"'
+   End Object
+   Begin Object Name="MaterialExpressionMultiply_13"
+      A=(Expression=MaterialExpressionConstant3Vector'"M_TB1_Floor:MaterialExpressionConstant3Vector_10"')
+      B=(Expression=MaterialExpressionTextureSample'"M_TB1_Floor:MaterialExpressionTextureSample_2"',Mask=1,MaskR=1,MaskG=1,MaskB=1)
+      MaterialExpressionEditorX=-320
+      MaterialExpressionEditorY=16
+      MaterialExpressionGuid=19D27818474A3EF68CBA26BA9B36E9F1
+      Material=Material'"M_TB1_Floor"'
+   End Object
+   Begin Object Name="MaterialExpressionTextureCoordinate_0"
+      MaterialExpressionEditorX=-928
+      MaterialExpressionEditorY=80
+      MaterialExpressionGuid=1D04AB264AB993C8AFDBBAB5F4421249
+      Material=Material'"M_TB1_Floor"'
+   End Object
+   Begin Object Name="MaterialExpressionTextureSample_1"
+      Coordinates=(Expression=MaterialExpressionTextureCoordinate'"M_TB1_Floor:MaterialExpressionTextureCoordinate_0"')
+      Texture=Texture2D'"/Game/CSC/Textures/T_TB1_Floor1_PBR_Normal.T_TB1_Floor1_PBR_Normal"'
+      SamplerType=SAMPLERTYPE_Normal
+      MaterialExpressionEditorX=-400
+      MaterialExpressionEditorY=560
+      MaterialExpressionGuid=85B7E9AA4E84B4B7A6BDA7837A9D727C
+      Material=Material'"M_TB1_Floor"'
+   End Object
+   Begin Object Name="MaterialExpressionTextureSample_2"
+      Coordinates=(Expression=MaterialExpressionTextureCoordinate'"M_TB1_Floor:MaterialExpressionTextureCoordinate_0"')
+      Texture=Texture2D'"/Game/CSC/Textures/T_TB1_Floor1_PBR_BaseColor.T_TB1_Floor1_PBR_BaseColor"'
+      MaterialExpressionEditorX=-624
+      MaterialExpressionEditorY=128
+      MaterialExpressionGuid=1741CC964B6177DC6555AFBB505487E4
+      Material=Material'"M_TB1_Floor"'
+   End Object
+   Begin Object Name="MaterialExpressionTextureSample_39"
+      Coordinates=(Expression=MaterialExpressionTextureCoordinate'"M_TB1_Floor:MaterialExpressionTextureCoordinate_0"')
+      Texture=Texture2D'"/Game/CSC/Textures/T_TB1_Floor1_PBR_OcclusionRoughnessMetallic.T_TB1_Floor1_PBR_OcclusionRoughnessMetallic"'
+      SamplerType=SAMPLERTYPE_LinearColor
+      MaterialExpressionEditorX=-496
+      MaterialExpressionEditorY=384
+      MaterialExpressionGuid=271A1EFC4A4EE82DBE7FCD947F318F32
+      Material=Material'"M_TB1_Floor"'
+   End Object
+   Begin Object Name="SceneThumbnailInfoWithPrimitive_0"
+   End Object
+   BaseColor=(Expression=MaterialExpressionAdd'"MaterialExpressionAdd_13"')
+   Metallic=(Expression=MaterialExpressionTextureSample'"MaterialExpressionTextureSample_39"',OutputIndex=3,Mask=1,MaskB=1)
+   Roughness=(Expression=MaterialExpressionTextureSample'"MaterialExpressionTextureSample_39"',OutputIndex=2,Mask=1,MaskG=1)
+   Normal=(Expression=MaterialExpressionTextureSample'"MaterialExpressionTextureSample_1"',Mask=1,MaskR=1,MaskG=1,MaskB=1)
+   EmissiveColor=(Mask=1,MaskR=1,MaskG=1,MaskB=1)
+   AmbientOcclusion=(Expression=MaterialExpressionTextureSample'"MaterialExpressionTextureSample_39"',OutputIndex=1,Mask=1,MaskR=1)
+   bUsedWithSkeletalMesh=True
+   bUsedWithStaticLighting=True
+   Expressions(0)=MaterialExpressionAdd'"MaterialExpressionAdd_13"'
+   Expressions(1)=MaterialExpressionTextureSample'"MaterialExpressionTextureSample_39"'
+   Expressions(2)=MaterialExpressionTextureSample'"MaterialExpressionTextureSample_1"'
+   Expressions(3)=MaterialExpressionTextureSample'"MaterialExpressionTextureSample_2"'
+   Expressions(4)=MaterialExpressionConstant3Vector'"MaterialExpressionConstant3Vector_10"'
+   Expressions(5)=MaterialExpressionMultiply'"MaterialExpressionMultiply_13"'
+   Expressions(6)=MaterialExpressionTextureCoordinate'"MaterialExpressionTextureCoordinate_0"'
+   bCanMaskedBeAssumedOpaque=True
+   StateId=519E72A644DB0CAEA662F48AD8690868
+   ReferencedTextureGuids(0)=695B5705458638CD9E0F409AECE7417E
+   ReferencedTextureGuids(1)=99DEA4DA4CF3D4B0E6F5C7B54A470570
+   ReferencedTextureGuids(2)=1FD19EAE4F856EF309CD849F52B150AB
+   ThumbnailInfo=SceneThumbnailInfoWithPrimitive'"SceneThumbnailInfoWithPrimitive_0"'
+   LightingGuid=35D3AC7D4970975D49A0E0B787874FC5
+End Object

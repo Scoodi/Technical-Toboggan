@@ -28,9 +28,9 @@ public class ScoreManager : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
+    {  
         GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
-
+            
         playerOne = players[0].GetComponent<TankScript>();
         playerTwo = players[1].GetComponent<TankScript>();
         

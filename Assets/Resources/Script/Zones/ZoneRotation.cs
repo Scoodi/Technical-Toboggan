@@ -34,7 +34,8 @@ public class ZoneRotation : MonoBehaviour
 
             //Increase the zone index and wrap to first zone if needed
             currentZoneIndex = (currentZoneIndex + 1) % zonePositions.Length;
-            zone.transform.position = zonePositions[currentZoneIndex].position;      
+            zone.transform.position = zonePositions[currentZoneIndex].position;
+            zone.transform.parent = zonePositions[currentZoneIndex];
         }
     }
 }

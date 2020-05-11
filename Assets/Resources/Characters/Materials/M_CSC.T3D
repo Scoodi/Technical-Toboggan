@@ -1,0 +1,85 @@
+Begin Object Class=/Script/Engine.Material Name="M_CSC"
+   Begin Object Class=/Script/Engine.MaterialExpressionAdd Name="MaterialExpressionAdd_8"
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionConstant3Vector Name="MaterialExpressionConstant3Vector_5"
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionMultiply Name="MaterialExpressionMultiply_8"
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionTextureSample Name="MaterialExpressionTextureSample_24"
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionTextureSample Name="MaterialExpressionTextureSample_25"
+   End Object
+   Begin Object Class=/Script/Engine.MaterialExpressionTextureSample Name="MaterialExpressionTextureSample_26"
+   End Object
+   Begin Object Class=/Script/UnrealEd.SceneThumbnailInfoWithPrimitive Name="SceneThumbnailInfoWithPrimitive_1"
+   End Object
+   Begin Object Name="MaterialExpressionAdd_8"
+      A=(Expression=MaterialExpressionTextureSample'"M_CSC:MaterialExpressionTextureSample_26"',Mask=1,MaskR=1,MaskG=1,MaskB=1)
+      B=(Expression=MaterialExpressionMultiply'"M_CSC:MaterialExpressionMultiply_8"')
+      MaterialExpressionEditorX=48
+      MaterialExpressionEditorY=-96
+      MaterialExpressionGuid=310DA7EF4C935EFB592E2DA54020F60A
+      Material=Material'"M_CSC"'
+   End Object
+   Begin Object Name="MaterialExpressionConstant3Vector_5"
+      Constant=(R=1.000000,G=1.000000,B=1.000000,A=1.000000)
+      MaterialExpressionEditorX=-288
+      MaterialExpressionEditorY=-112
+      MaterialExpressionGuid=A5831D8A4A2DD38D74575AA644EDDE9E
+      Material=Material'"M_CSC"'
+   End Object
+   Begin Object Name="MaterialExpressionMultiply_8"
+      A=(Expression=MaterialExpressionConstant3Vector'"M_CSC:MaterialExpressionConstant3Vector_5"')
+      B=(Expression=MaterialExpressionTextureSample'"M_CSC:MaterialExpressionTextureSample_26"',Mask=1,MaskR=1,MaskG=1,MaskB=1)
+      MaterialExpressionEditorX=-96
+      MaterialExpressionEditorY=16
+      MaterialExpressionGuid=19D27818474A3EF68CBA26BA9B36E9F1
+      Material=Material'"M_CSC"'
+   End Object
+   Begin Object Name="MaterialExpressionTextureSample_24"
+      Texture=Texture2D'"/Game/CSC/Textures/T_ACS17_OcclusionRoughnessMetallic.T_ACS17_OcclusionRoughnessMetallic"'
+      SamplerType=SAMPLERTYPE_LinearColor
+      MaterialExpressionEditorX=-304
+      MaterialExpressionEditorY=320
+      MaterialExpressionGuid=271A1EFC4A4EE82DBE7FCD947F318F32
+      Material=Material'"M_CSC"'
+   End Object
+   Begin Object Name="MaterialExpressionTextureSample_25"
+      Texture=Texture2D'"/Game/CSC/Textures/T_ACS17_unreal_Normal.T_ACS17_unreal_Normal"'
+      SamplerType=SAMPLERTYPE_Normal
+      MaterialExpressionEditorX=-208
+      MaterialExpressionEditorY=544
+      MaterialExpressionGuid=85B7E9AA4E84B4B7A6BDA7837A9D727C
+      Material=Material'"M_CSC"'
+   End Object
+   Begin Object Name="MaterialExpressionTextureSample_26"
+      Texture=Texture2D'"/Game/CSC/Textures/T_ACS17_BaseColor.T_ACS17_BaseColor"'
+      MaterialExpressionEditorX=-336
+      MaterialExpressionEditorY=96
+      MaterialExpressionGuid=1741CC964B6177DC6555AFBB505487E4
+      Material=Material'"M_CSC"'
+   End Object
+   Begin Object Name="SceneThumbnailInfoWithPrimitive_1"
+   End Object
+   BaseColor=(Expression=MaterialExpressionAdd'"MaterialExpressionAdd_8"')
+   Metallic=(Expression=MaterialExpressionTextureSample'"MaterialExpressionTextureSample_24"',OutputIndex=3,Mask=1,MaskB=1)
+   Roughness=(Expression=MaterialExpressionTextureSample'"MaterialExpressionTextureSample_24"',OutputIndex=2,Mask=1,MaskG=1)
+   Normal=(Expression=MaterialExpressionTextureSample'"MaterialExpressionTextureSample_25"',Mask=1,MaskR=1,MaskG=1,MaskB=1)
+   AmbientOcclusion=(Expression=MaterialExpressionTextureSample'"MaterialExpressionTextureSample_24"',OutputIndex=1,Mask=1,MaskR=1)
+   bUsedWithSkeletalMesh=True
+   EditorX=336
+   EditorY=32
+   Expressions(0)=MaterialExpressionAdd'"MaterialExpressionAdd_8"'
+   Expressions(1)=MaterialExpressionTextureSample'"MaterialExpressionTextureSample_24"'
+   Expressions(2)=MaterialExpressionTextureSample'"MaterialExpressionTextureSample_25"'
+   Expressions(3)=MaterialExpressionTextureSample'"MaterialExpressionTextureSample_26"'
+   Expressions(4)=MaterialExpressionConstant3Vector'"MaterialExpressionConstant3Vector_5"'
+   Expressions(5)=MaterialExpressionMultiply'"MaterialExpressionMultiply_8"'
+   bCanMaskedBeAssumedOpaque=True
+   StateId=001EC294458A0E6487C7769F601CDEF8
+   ReferencedTextureGuids(0)=D465F3834B6EB10EA4A81BB62B585EDB
+   ReferencedTextureGuids(1)=06A49727470DF71D5F8F2697ADA99944
+   ReferencedTextureGuids(2)=2CDC55FF418B9A2E90DF50900DAA6243
+   ThumbnailInfo=SceneThumbnailInfoWithPrimitive'"SceneThumbnailInfoWithPrimitive_1"'
+   LightingGuid=E21FD9354E557A68CE2185B750FCE9BA
+End Object
