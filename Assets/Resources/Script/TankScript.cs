@@ -27,16 +27,11 @@ public class TankScript : MonoBehaviour
     private Rigidbody rb;
     private ShootScript shootController;
     private bool onGround = true;
+    public bool isDead = false;
 
     public int score;
 
-    MeshRenderer[] meshes;
-
-    public enum EDirection 
-    { 
-        eLeft, eRight
-    }
-    
+    SkinnedMeshRenderer[] meshes;
 
     // Start is called before the first frame update
     void Start()
@@ -59,7 +54,7 @@ public class TankScript : MonoBehaviour
         }
 
         //Get all the mesh renderers in the tank model 
-        meshes = gameObject.GetComponentsInChildren<MeshRenderer>();
+        meshes = gameObject.GetComponentsInChildren<SkinnedMeshRenderer>();
 
     }
 
@@ -90,26 +85,14 @@ public class TankScript : MonoBehaviour
     {        
         if (Input.GetButton(aAccessName))
         {
-            Turn(EDirection.eLeft);
-        }
-        if (Input.GetButton(bAccessName))
-        {
-            Turn(EDirection.eRight);
-        }
-    }
-    
-    public void Turn(EDirection argDirection)
-    {
-        if (argDirection == EDirection.eLeft)
-        {
             transform.Rotate(Vector3.down * turnSpeed);
         }
-        else if(argDirection == EDirection.eRight)
+        if (Input.GetButton(bAccessName))
         {
             transform.Rotate(Vector3.up * turnSpeed);
         }
     }
-
+    
     public void ChangeHealth (float hp)
     {
         health += hp;
@@ -148,7 +131,7 @@ public class TankScript : MonoBehaviour
          and make the code cleaner*/
 
         //Disable all the render meshes in the tank
-        foreach (MeshRenderer mr in meshes)
+        foreach (SkinnedMeshRenderer mr in meshes)
         {
             mr.enabled = false;
         }
@@ -171,16 +154,19 @@ public class TankScript : MonoBehaviour
         RequestHUDUpdate();    
       
         //Enable all the meshes 
-        foreach (MeshRenderer mr in meshes)
+        foreach (SkinnedMeshRenderer mr in meshes)
         {
             mr.enabled = true;
         }
+        isDead = false;
     }
 
     public void Die ()
     {
         //Give the other player points
         ScoreManager.instance.GivePlayerScoreForKill(playerNumber);
+
+        isDead = true;
 
         //TODO - Create a better affect for the tank dying, explosion 
         Debug.Log("Player " + playerNumber + " is dead");    

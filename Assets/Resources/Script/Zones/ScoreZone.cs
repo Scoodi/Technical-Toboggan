@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ScoreZone : MonoBehaviour
 {
-
     [SerializeField] private float pointRate = 1.0f;
     private TankScript player;
 
@@ -36,13 +35,15 @@ public class ScoreZone : MonoBehaviour
     }
     public void OnTriggerEnter(Collider other)
     {
-        playersInZone++;
+        if (other.gameObject.GetComponent<TankScript>() != null)
+            playersInZone++;
         Debug.Log(playersInZone);
     }
 
     public void OnTriggerExit(Collider other)
     {
-        playersInZone--;
+        if (other.gameObject.GetComponent<TankScript>() != null)
+            playersInZone--;
         Debug.Log(playersInZone);
     }
 

@@ -38,7 +38,7 @@ public class OnLevelLoad : MonoBehaviour
            In the final version of the game this check can be removed */
                   
             //Player One
-            var p1Character = Resources.Load<CharacterObject>("Characters/Character" + p1Selection.ToString()); ;
+            var p1Character = Resources.Load<CharacterObject>("Characters/Character" + p1Selection.ToString()); 
             p1Character.CreateInstance(playerOneSpawnPoint, 1);
 
             //Player Two

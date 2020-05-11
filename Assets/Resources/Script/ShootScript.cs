@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class ShootScript : MonoBehaviour
 {
+    TankScript tankScript;
+
     public int playerNumber = 0;
     public Transform shootPoint;
     public GameObject projectile;
     public float speed = 1f;
-    public float shootSpeed = 1f;
+    public float timeBetweenShots = 1f;
     public int currentProjectile = 0;
 
     private bool onCooldown = false;
@@ -20,6 +22,9 @@ public class ShootScript : MonoBehaviour
     {
         xAccessName = "X" + playerNumber;
         yAccessName = "Y" + playerNumber;
+
+        tankScript = gameObject.GetComponent<TankScript>();
+
     }
 
     // Update is called once per frame
@@ -32,7 +37,7 @@ public class ShootScript : MonoBehaviour
     {
         if (Input.GetButtonDown(xAccessName))
         {
-            if (!onCooldown)
+            if (!onCooldown && !tankScript.isDead)
             {
                 GameObject g = Instantiate(projectile, shootPoint.position, shootPoint.rotation);
                 g.GetComponent<ProjectileScript>().SetProjectile(currentProjectile);
@@ -53,7 +58,7 @@ public class ShootScript : MonoBehaviour
     {
         onCooldown = true;
         gameObject.GetComponentInChildren<Renderer>().material.color = new Color(1,0,0);
-        yield return new WaitForSeconds(shootSpeed);
+        yield return new WaitForSeconds(timeBetweenShots);
         onCooldown = false;
         gameObject.GetComponentInChildren<Renderer>().material.color = new Color(0, 1, 0);
     }

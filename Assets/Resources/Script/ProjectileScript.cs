@@ -25,6 +25,7 @@ public class ProjectileScript : MonoBehaviour
 
     public void SetProjectile (int projectileIndex)
     {
+    
         //Sets internal variables to those from the array
         type = projectiles[projectileIndex].name;
         speed = projectiles[projectileIndex].speed;

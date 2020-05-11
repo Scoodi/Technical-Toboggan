@@ -298,7 +298,7 @@ GameObject:
   - component: {fileID: 305868616}
   - component: {fileID: 305868615}
   m_Layer: 5
-  m_Name: CharacterImage
+  m_Name: LevelImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -343,7 +343,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Texture: {fileID: 2800000, guid: e90214f60d494b04bb116b128583dba0, type: 3}
+  m_Texture: {fileID: 2800000, guid: b1fb0d51bbd522142abde5c2327b1543, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -370,7 +370,7 @@ GameObject:
   - component: {fileID: 451002983}
   - component: {fileID: 451002982}
   m_Layer: 5
-  m_Name: CharacterImage
+  m_Name: LevelImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -415,7 +415,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Texture: {fileID: 2800000, guid: 831b0ddca9afe214bb90c9d3ffb0f194, type: 3}
+  m_Texture: {fileID: 2800000, guid: ba6d404ec8dc59a4ca3785df3621c66d, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
